@@ -1,0 +1,52 @@
+<html>
+<head>
+  <title>React Hello World 4</title>
+
+  <!-- DEBUG version -->
+  <script src="react.js"></script>
+
+  <script>
+    var myHelloWorld4Component = React.createClass({
+      displayName: 'helloWorld4',
+      getInitialState: function () {
+        // Decide what the inital state should be
+        return {
+          color: this.colors[0],
+          count: 1 };
+      },
+      propTypes: {
+        greetingName: React.PropTypes.string.isRequired,
+      },
+      // List of available link colors
+      colors: ['green', 'orange', 'red', 'blue'],
+      handleClick: function() {
+        // Change to next available color on each click
+        var newColor = this.colors[this.state.count % this.colors.length];
+        var newCount = this.state.count + 1;
+
+        // calling setState will cause React to render the component
+        this.setState({color: newColor, count: newCount });
+      },
+      render: function() {
+        return React.DOM.h1(
+           {
+             onClick: this.handleClick, // JS onClick event
+             style: { color: this.state.color } // Inline CSS
+           },
+          'Hello ' + this.props.greetingName + " " + this.state.count
+        );
+      }
+    });
+  </script>
+</head>
+<body>
+  <div id="my-react-div"></div>
+
+  <script>
+    React.render(
+      React.createElement(myHelloWorld4Component, { greetingName: 'Kristofer' } ),
+      document.getElementById('my-react-div')
+    );
+  </script>
+</body>
+</html>
