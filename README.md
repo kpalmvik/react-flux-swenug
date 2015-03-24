@@ -15,6 +15,10 @@ MIT Licensed. Written by Kristofer Palmvik.
 Create a component using React.createClass with a props called greetingName that is used to generate the 'Hello' greeting. Also includes a foo prop that is specified as mandatory but intentionally not passed, demonstrating the validation warning shown in the console when using React.JS debug.
 MIT Licensed. Written by Kristofer Palmvik.
 
+##helloworld4.html
+Create a component using React.createClass with a props called greetingName that is used to generate the 'Hello' greeting. Contains state variables for count and color, which is changed when the text is clicked.
+MIT Licensed. Written by Kristofer Palmvik.
+
 ##todo/
 React Todo example from [todomvc](https://github.com/tastejs/todomvc).
 
