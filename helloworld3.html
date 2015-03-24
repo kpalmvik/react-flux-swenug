@@ -1,0 +1,42 @@
+<html>
+<head>
+  <title>React Hello World 3</title>
+
+  <!-- DEBUG version -->
+  <script src="react.js"></script>
+
+  <!-- RELEASE version -->
+  <!-- <NOT USED script src="react.min.js"></script> -->
+
+  <script>
+    var myHelloWorld3Component = React.createClass({
+      // The displayName string is used in debugging messages
+      displayName: 'helloWorld3',
+      // propTypes specifies validation when using React in debug mode
+      propTypes: {
+        greetingName: React.PropTypes.string.isRequired,
+        foo: React.PropTypes.bool.isRequired // Will generate a debug warning!
+      },
+
+      // The render function is where the magic happens
+      render: function() {
+        return React.DOM.h1( // Same as createElement('h1', ...
+          // The props to send to the object
+          null,
+          // The children of the object
+          'Hello ' + this.props.greetingName);
+      }
+    });
+  </script>
+</head>
+<body>
+  <div id="my-react-div"></div>
+
+  <script>
+    React.render(
+      React.createElement(myHelloWorld3Component, { greetingName: 'Kristofer' } ),
+      document.getElementById('my-react-div')
+    );
+  </script>
+</body>
+</html>

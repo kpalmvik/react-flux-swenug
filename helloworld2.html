@@ -1,0 +1,45 @@
+<html>
+
+<head>
+  <title>React Hello World 2</title>
+
+  <style>
+    /* Inline style to make the text red */
+    
+    .red-text {
+      color: red;
+    }
+  </style>
+
+  <script src="react.js"></script>
+  <script>
+    var myHelloWorld2Component = React.createClass({
+      // The displayName string is used in debugging messages
+      displayName: 'helloWorld2',
+
+      // The render function is where the magic happens
+      render: function() {
+        return React.DOM.h1( // Same as createElement('h1', ...
+          // The props to send to the object
+          {
+            className: 'red-text'
+          },
+          // The children of the object, in this case just text
+          'Hello world 2');
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <div id="my-react-div"></div>
+
+  <script>
+    React.render(
+      React.createElement(myHelloWorld2Component, null),
+      document.getElementById('my-react-div')
+    );
+  </script>
+</body>
+
+</html>

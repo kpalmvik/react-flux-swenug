@@ -1,0 +1,23 @@
+<html>
+
+<head>
+  <title>React Hello World</title>
+  <script src="react.js"></script>
+</head>
+
+<body>
+  <div id="my-react-div"></div>
+
+  <script>
+    // Put the script tag here to make sure it is run when document is ready
+    React.render(
+      React.createElement('h1', // Type
+        null, // Props
+        'Hello world!' // Child(ren)
+        ),
+      document.getElementById('my-react-div') // Where to render it
+    );
+  </script>
+</body>
+
+</html>
